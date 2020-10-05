@@ -1,3 +1,29 @@
 <div class="blog-post">
-  <h2 class="blog-post-title">Pesquisas</h2>
+  <h2 class="blog-post-title">Enquete</h2>
+
+  <table class='table table-hover'>
+    <thead>
+      <tr>
+        <th> Name </th>
+        <th> Inicio </th>
+        <th> Fim </th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @surveys.each do |survey|%>
+        <tr>
+          <td> <%= survey.name%> </td>
+          <td> <%= l survey.date_init%> </td>
+          <td> <%= l survey.date_end%> </td>
+          <td>
+            <%= link_to 'Exibir', admin_survey_path(survey), class: "btn btn-primary btn-xs"%>
+            <%= link_to 'Editar', edit_admin_survey_path(survey), class: "btn btn-secondary btn-xs"%>
+            <%= link_to 'Excluir', admin_survey_path(survey), :method => :delete, :data => { :confirm => 'Deseja realmente excluir?' }, class: "btn btn-danger btn-xs"%>
+          </td>
+        </tr>
+      <%end%>
+    </tbody>
+  </table>
+  <%= link_to 'Nova Enquete', new_admin_survey_path, class: 'btn btn-primary'%>
 </div>

@@ -1,0 +1,18 @@
+<%= simple_form_for [:admin, @survey] do |f| %> 
+  <%= f.error_notification%>
+
+  <%= f.input :name%>
+  <%= f.input :date_init %>
+  <%= f.input :date_end %>
+
+  <div id='questions'>
+    <%= f.simple_fields_for :questions do |builder|%>
+      <%= render 'question_fields', :f => builder%>
+    <%end%>
+  </div>
+
+  <div class='form-actions'>
+    <%= f.button :submit, value: 'Salvar', class: 'btn btn-primary' %>
+    <%= link_to 'Voltar', admin_surveys_path, :class=>'btn btn-secondary'%>
+  </div>
+<% end %>

@@ -1,0 +1,29 @@
+<p>
+  <b>Nome: </b>
+  <%= @survey.name%>
+</p>
+<p>
+  <b>Data inicial da pesquisa:</b>
+  <%= l @survey.date_init%>
+
+</p>
+<p>
+  <b>Data final da pesquisa:</b>
+  <%= l @survey.date_end%>
+
+</p>
+<p>
+  <b>Pergunta</b>
+  <% @survey.questions.each do |question|%>
+    <%= question.content%>
+    <p>
+      <b>Respostas</b>
+      <ul>
+      <% question.answers.each do |answer|%>
+        <li><%= answer.content%></li>
+      <%end%>
+    </p>
+  <%end%>
+</p>
+<%= link_to 'Editar', edit_admin_survey_path(@survey), :class=>"btn btn-primary"%>
+<%= link_to 'Voltar', admin_surveys_path, :class=>"btn btn-primary"%>

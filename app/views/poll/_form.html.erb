@@ -1,0 +1,26 @@
+<%= simple_form_for(@poll_answer, url: send_poll_answer_path(@survey.permalink), method: :post) do |f|%>
+    <%= f.error_notification%>
+    <% if @poll_answer.errors.any? %>
+      <ul>
+        <% @poll_answer.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    <% end %>
+
+    <div class='form-inputs'>
+      <div class='row'>
+        <div class='col-lg-12'>
+          <div class='answer'>
+            <%= f.collection_radio_buttons :answer_id, @survey.answers, :id, :content do |radio|%>
+              <%= radio.radio_button + " " + radio.label%>
+            <%end%>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class='form-actions'>
+      <%= f.button :submit, value: "Votar", class: 'btn btn-primary'%>
+    </div>
+  <%end%>

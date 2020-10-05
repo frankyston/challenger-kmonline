@@ -1,0 +1,13 @@
+<% sum = 0 %>
+<% @survey.answers.each {|answer| sum += answer.poll_answers.size} %>
+<% @survey.answers.each do |answer| %>
+  <% total = answer.poll_answers.size > 0 ? (answer.poll_answers.size * 100 / sum) : 0 %>
+  <h5><%= "#{answer.content}(#{total}%)" %></h5>
+  <div class="progress" style="height: 20px;">
+    <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="<%= total %>" aria-valuemin="0" aria-valuemax="<%= total %>" style="width: <%= total %>%"></div>
+  </div>
+  <br>
+<% end %>
+
+
+

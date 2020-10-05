@@ -7,6 +7,10 @@ pt-BR:
         question: Questão
         answer: Resposta
         user: Usuário
+        poll_answer:
+          attributes:
+            answer:
+              required: Você deve escolher uma opção para votar.
       user:
         one: "Usuário"
         other: "Usuários"

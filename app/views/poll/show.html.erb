@@ -1,0 +1,4 @@
+<div class="blog-post">
+  <h4><%= @survey.questions.first.content %></h4>
+  <%= render "#{@voted ? 'result' : 'form'}" %>
+</div>

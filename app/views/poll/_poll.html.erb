@@ -3,7 +3,7 @@
     <div class="card-body">
       <h5 class="card-title"><%= poll.questions.first.content %></h5>
       <p class="card-text">Clique no botão abaixo para participar da enquete.</p>
-      <a href="#" class="btn btn-primary">Participar</a>
+      <%= link_to 'Participar', poll_path(poll.permalink), class: 'btn btn-primary'%>
     </div>
   </div>
 </div>

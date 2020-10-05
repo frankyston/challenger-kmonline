@@ -11,7 +11,13 @@
 
   <body>
     <%= render 'shared/front/menu'%>
-    <%= yield %>
+    <main role="main" class="container">
+      <div class="row">
+        <div class="col-md-12 blog-main">
+          <%= yield %>
+        </div>
+      </div>
+    </main>
     <%= render 'shared/footer'%>
   </body>
 </html>

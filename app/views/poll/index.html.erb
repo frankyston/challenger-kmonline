@@ -1,0 +1,13 @@
+<div class="blog-post">
+  <h2 class="blog-post-title">Enquetes</h2>
+
+  <div class="row">
+    <% if @polls.size > 0 %>
+      <% @polls.each do |poll| %>
+        <%= render 'poll', poll: poll %> 
+      <% end %>
+    <% else %>
+      <h2>Nenhuma enquete por aqui. :(</h2>
+    <% end %>
+  </div>
+</div>

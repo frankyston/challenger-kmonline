@@ -1,0 +1,46 @@
+# encoding: UTF-8
+pt-BR:
+  activerecord:
+    errors:
+      models:
+        survey: Pesquisa
+        question: Questão
+        answer: Resposta
+        user: Usuário
+      user:
+        one: "Usuário"
+        other: "Usuários"
+      survey:
+        one: "Enquete"
+        other: "Enquetes"
+      question:
+        one: "Pergunta"
+        other: "Perguntas"
+      answer:
+        one: "Resposta"
+        other: "Respostas"
+    attributes:
+      user:
+        email: "E-mail"
+        name: Nome
+        password: "Senha"
+        password_confirmation: Confirmação de senha
+        encrypted_password: "Senha"
+        last_sign_in_at: "Último Login"
+        current_sign_in_ip: "IP do login atual"
+        current_sign_in_at: "Login atual"
+        last_sign_in_ip: "IP do último login"
+        created_at: "Criado em"
+        updated_at: "Atualizado em"
+        sign_in_count: "Número de logins"
+        current_password: "Senha atual"
+        role: "Nível de acesso"
+      survey:
+        name: Nome
+        date_init: Data inicial da pesquisa
+        date_end: Data final da pesquisa
+      question:
+        content: Pergunta
+      answer:
+        content: Resposta
+        _destroy: Excluir resposta

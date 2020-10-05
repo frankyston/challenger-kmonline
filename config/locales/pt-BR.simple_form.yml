@@ -1,0 +1,51 @@
+# encoding: UTF-8
+pt-BR:
+  simple_form:
+    "yes": 'Sim'
+    "no": 'Não'
+    required:
+      text: 'obrigatório'
+      mark: '*'
+      # You can uncomment the line below if you need to overwrite the whole required html.
+      # When using html, text and mark won't be used.
+      # html: '<abbr title="required">*</abbr>'
+    error_notification:
+      default_message: "Por favor, revise os problemas listados abaixo:"
+    # Examples
+    labels:
+      defaults:
+        password: 'Senha'
+        password_confirmation: "Confirmação de senha"
+        last_sign_in_at: "Último login em"
+      subscriber:
+        name: "Nome"
+        email: "Email"
+        phone: "Telefone"
+        mobile_phone: "Celular"
+        subject: "Assunto"
+        message: "Mensagem"
+        reference: "Como Conheceu o RSVP Net?"
+      customer:
+        name: "Nome"
+        created_at: "Criado em"
+        updated_at: "Atualizado em"
+        responsible: "Responsável"
+        logo: "Logo do Contratante"
+      user:
+        customer: "Contratante"
+        new:
+          name: "Nome"
+          email: 'E-mail'
+          remember_me: "Lembrar-me"
+          password: 'Senha'
+          last_sign_in_at: "Último login em"
+        edit:
+          name: "Nome"
+          email: 'E-mail'
+          last_sign_in_at: "Último login em"
+    placeholders:
+      custom_field:
+        name: "Nome"
+    hints:
+      import:
+        file: "Faça o upload da sua tabela Excel (.xlsx)"

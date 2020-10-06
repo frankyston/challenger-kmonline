@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_05_125125) do
+ActiveRecord::Schema.define(version: 2020_10_05_174131) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,6 +21,16 @@ ActiveRecord::Schema.define(version: 2020_10_05_125125) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["question_id"], name: "index_answers_on_question_id"
+  end
+
+  create_table "poll_answers", force: :cascade do |t|
+    t.bigint "survey_id", null: false
+    t.bigint "answer_id", null: false
+    t.inet "user_ip"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["answer_id"], name: "index_poll_answers_on_answer_id"
+    t.index ["survey_id"], name: "index_poll_answers_on_survey_id"
   end
 
   create_table "questions", force: :cascade do |t|
@@ -37,6 +47,7 @@ ActiveRecord::Schema.define(version: 2020_10_05_125125) do
     t.date "date_end"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "permalink"
   end
 
   create_table "users", force: :cascade do |t|
@@ -53,5 +64,7 @@ ActiveRecord::Schema.define(version: 2020_10_05_125125) do
   end
 
   add_foreign_key "answers", "questions"
+  add_foreign_key "poll_answers", "answers"
+  add_foreign_key "poll_answers", "surveys"
   add_foreign_key "questions", "surveys"
 end

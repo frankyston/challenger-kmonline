@@ -24,6 +24,8 @@ class Admin::SurveysController < Admin::BaseController
       flash[:notice] = "Pesquisa Criada com sucesso."
       redirect_to admin_survey_path(@survey)
     else
+      question = @survey.questions.build
+      4.times { question.answers.build }
       render :new
     end
   end

@@ -10,6 +10,10 @@ O desafio é criar um sistema de enquete.
 * Na página da enquete deve conter a enquete para ser respondida, após votar deve aparecer um gráfico com a porcentagem de voto em cada opção
 * Testes unitários
 
+# Entidade Relacionamento
+
+![Entidade-Relacionamento](entidade-relacionamento.png)
+
 # Instruções para executar o projeto
 
 1. Tenha o ruby 2.6.6 instalado.
